@@ -1,0 +1,21 @@
+AUTHORIZED SECURITY EXPOSURE SCAN REPORT
+============================================================
+Target:     192.168.1.101
+Date (UTC): 2026-11-05T21:05:16.118761+00:00Z
+Tool:       secure_scan.py v1.0 (read-only)
+Findings:   HIGH=1, MEDIUM=1, LOW=1, INFO=1
+
+NOTE: This report lists publicly observable information only. No
+exploitation, brute force, or modification was performed.
+
+[HIGH] (Headers) Site unreachable
+    https://192.168.1.101: <urlopen error timed out>
+
+[MEDIUM] (HTTPS) HTTP not reachable
+    http://192.168.1.101/ did not respond: <urlopen error timed out>
+
+[LOW] (TLS) TLS check skipped
+    timed out
+
+[INFO] (Network) 0 common ports open on 192.168.1.101
+    none

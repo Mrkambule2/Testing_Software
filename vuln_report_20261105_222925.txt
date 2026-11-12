@@ -1,0 +1,53 @@
+VulnCheck Lite - Defensive Security Audit Report
+============================================================
+Target : https://example.com/
+Date   : 2026-11-05T22:29:25
+Mode   : Read-only audit (GET/HEAD/OPTIONS + TCP connect + non-destructive SQLi indicator probes)
+
+SECURITY VERDICT
+------------------------------------------------------------
+POTENTIALLY VULNERABLE - MEDIUM findings present. Manually verify injection indicators (e.g. with sqlmap).
+DATABASE: no external exposure detected. Internal credentials/config still need review. Detected technology: SMTP service banner on 25: 220 protect.herotel.com ESMTP Server Ready - confirm version is supported and patched.
+Findings: MEDIUM=6, LOW=1, INFO=1
+
+FINDINGS
+------------------------------------------------------------
+[MEDIUM  ] Missing security header 'strict-transport-security' - HSTS - forces HTTPS, prevents downgrade attacks
+[MEDIUM  ] Missing security header 'content-security-policy' - CSP - mitigates XSS
+[MEDIUM  ] Missing security header 'x-frame-options' - Clickjacking protection
+[MEDIUM  ] Missing security header 'x-content-type-options' - Prevents MIME-sniffing
+[MEDIUM  ] Missing security header 'referrer-policy' - Controls referrer leakage
+[MEDIUM  ] Missing security header 'permissions-policy' - Restricts browser features
+[LOW     ] Server version disclosed via header: cloudflare (helps attackers fingerprint the stack).
+[INFO    ] Database technology detected: SMTP service banner on 25: 220 protect.herotel.com ESMTP Server Ready - Fingerprinted from error messages, page content or port banner. Verify the version is still supported/patched.
+
+INFO
+------------------------------------------------------------
+Target        : https://example.com/
+Scan started  : 2026-11-05T22:29:11
+Host resolves : 104.20.23.154
+HTTP status  : 200
+Server banner: cloudflare
+TLS version : TLSv1.3
+Cipher       : TLS_AES_256_GCM_SHA384 (256 bits)
+Certificate expires: Dec 25 22:56:35 2026 GMT
+Public file scan: 1 page(s)/file(s) checked, 0 secret pattern hit(s).
+Attack surface: 0 input(s) with parameters, 0 API endpoint(s) discovered
+HTTP OPTIONS -> 405
+DNS: SPF record present (good)
+DNS: DMARC record present (good)
+Suspicious script patterns found: 0
+Open ports on example.com: 25(SMTP), 8080(HTTP-proxy), 8443(HTTPS-alt)
+Database fingerprint: SMTP service banner on 25: 220 protect.herotel.com ESMTP Server Ready
+
+RECOMMENDATIONS
+------------------------------------------------------------
+- Remove or restrict access to any exposed sensitive files (.env, .git, backups).
+- Add missing security headers (CSP, HSTS, X-Frame-Options, etc.).
+- Set Secure + HttpOnly + SameSite on all cookies.
+- Disable server version disclosure (Server / X-Powered-By headers).
+- Upgrade to TLS 1.2+ and strong ciphers (>=128-bit).
+- If secrets were found in responses, rotate them immediately.
+- If SQL injection indicators were found: use parameterized queries / prepared statements for ALL database access, and verify with sqlmap.
+- Restrict database ports (3306/5432/27017/6379/9200...) via firewall/VPN.
+- Review discovered API endpoints for missing authentication/rate limiting.

@@ -1,0 +1,26 @@
+AUTHORIZED SECURITY EXPOSURE SCAN REPORT
+============================================================
+Target:     https://polite-panda-8b2df1.netlify.app/
+Date (UTC): 2026-11-05T20:21:23.263295+00:00Z
+Tool:       secure_scan.py v1.0 (read-only)
+Findings:   HIGH=1, MEDIUM=1, LOW=2, INFO=1
+
+NOTE: This report lists publicly observable information only. No
+exploitation, brute force, or modification was performed.
+
+[HIGH] (Headers) Site unreachable
+    https://polite-panda-8b2df1.netlify.app: <urlopen error [WinError 10051] A socket operation was attempted to an unreachable network>
+
+[MEDIUM] (HTTPS) HTTP not reachable
+    http://polite-panda-8b2df1.netlify.app/ did not respond: <urlopen error [WinError 10051] A socket operation was attempted to an unreachable network>
+
+[LOW] (Network) SMTP banner on port 25
+    220 protect.herotel.com ESMTP Server Ready
+500 unrecognized command
+    Evidence: 220 protect.herotel.com ESMTP Server Ready 500 unrecognized command
+
+[LOW] (TLS) TLS check skipped
+    [WinError 10051] A socket operation was attempted to an unreachable network
+
+[INFO] (Network) 1 common ports open on polite-panda-8b2df1.netlify.app
+    25

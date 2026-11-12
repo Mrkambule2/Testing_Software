@@ -1,0 +1,101 @@
+VulnCheck Lite - Defensive Security Audit Report
+============================================================
+Target : http://127.0.0.1:8899/login
+Date   : 2026-11-06T15:20:47
+Mode   : Read-only audit (GET/HEAD/OPTIONS + TCP connect + non-destructive SQLi indicator probes)
+
+SECURITY VERDICT
+------------------------------------------------------------
+VULNERABLE - CRITICAL issues found. Fix all CRITICAL findings immediately.
+DATABASE: no external exposure detected. Internal credentials/config still need review.
+Findings: CRITICAL=1, HIGH=2, MEDIUM=9, LOW=2, INFO=15
+
+TEST RESULTS  (0 = secure / no issues, 100 = vulnerable)
+------------------------------------------------------------
+HTTP headers & cookies                              77/100  (7 finding(s))
+TLS version & cipher                                 0/100  (0 finding(s)) [skipped]
+TLS certificate validity                             0/100  (0 finding(s)) [skipped]
+Sensitive file exposure (90+ paths)                 60/100  (17 finding(s))
+Public file & secret scan                            0/100  (0 finding(s))
+SQL injection probes (error/boolean/UNION)           0/100  (0 finding(s))
+XSS / SSTI / open-redirect probes                    0/100  (0 finding(s))
+CORS configuration                                   0/100  (0 finding(s))
+HTTP methods (OPTIONS)                               0/100  (0 finding(s))
+Directory listing check                              0/100  (0 finding(s))
+Legacy TLS 1.0/1.1 check                             0/100  (0 finding(s))
+GraphQL introspection                                0/100  (0 finding(s))
+API authentication probe                             0/100  (0 finding(s))
+Dangling deploy / subdomain takeover                 0/100  (0 finding(s))
+Content analysis (mixed/comments/forms/JS libs)     17/100  (2 finding(s))
+Phishing surface (SPF/DMARC/external forms)          0/100  (0 finding(s))
+Suspicious script scan (miners/obfuscation)          0/100  (0 finding(s))
+IDOR probe (numeric object IDs)                      0/100  (0 finding(s))
+robots.txt & sitemap review                          0/100  (0 finding(s))
+Software fingerprinting                              0/100  (0 finding(s))
+Device ping check                                    0/100  (0 finding(s))
+Default credential check (device login)             50/100  (1 finding(s))
+Port scan (1089 ports - device mode)                12/100  (1 finding(s))
+
+FINDINGS
+------------------------------------------------------------
+[CRITICAL] WEAK PASSWORD - device login accepts DEFAULT credentials 'admin':*** - Factory default password still active - change it immediately to a strong unique password.
+[HIGH    ] Publicly accessible: /phpmyadmin/ (HTTP 200) - SENSITIVE FILE EXPOSED!
+[HIGH    ] Publicly accessible: /pma/ (HTTP 200) - SENSITIVE FILE EXPOSED!
+[MEDIUM  ] Missing security header 'strict-transport-security' - HSTS - forces HTTPS, prevents downgrade attacks
+[MEDIUM  ] Missing security header 'content-security-policy' - CSP - mitigates XSS
+[MEDIUM  ] Missing security header 'x-frame-options' - Clickjacking protection
+[MEDIUM  ] Missing security header 'x-content-type-options' - Prevents MIME-sniffing
+[MEDIUM  ] Missing security header 'referrer-policy' - Controls referrer leakage
+[MEDIUM  ] Missing security header 'permissions-policy' - Restricts browser features
+[MEDIUM  ] POST form has no visible CSRF token field - If no token is added by JS, the form may be CSRF-able.
+[MEDIUM  ] SMB (445) exposed - Ensure SMB is not reachable from untrusted networks.
+[MEDIUM  ] Site available over plain HTTP without forced HTTPS redirect.
+[LOW     ] Server version disclosed via header: BaseHTTP Python/3.15.0 (helps attackers fingerprint the stack).
+[LOW     ] 1 password field(s) missing autocomplete attribute - Use autocomplete='current-password'/'new-password' appropriately.
+[INFO    ] Publicly accessible: /test/ (HTTP 200)
+[INFO    ] Publicly accessible: /backups/ (HTTP 200)
+[INFO    ] Publicly accessible: /backup/ (HTTP 200)
+[INFO    ] Publicly accessible: /old/ (HTTP 200)
+[INFO    ] Publicly accessible: /admin/ (HTTP 200)
+[INFO    ] Publicly accessible: /administrator/ (HTTP 200)
+[INFO    ] Publicly accessible: /wp-admin/ (HTTP 200)
+[INFO    ] Publicly accessible: /debug/ (HTTP 200)
+[INFO    ] Publicly accessible: /sitemap.xml (HTTP 200)
+[INFO    ] Publicly accessible: /.well-known/security.txt (HTTP 200)
+[INFO    ] Publicly accessible: /humans.txt (HTTP 200)
+[INFO    ] Publicly accessible: /robots.txt (HTTP 200)
+[INFO    ] Publicly accessible: /sitemap_index.xml (HTTP 200)
+[INFO    ] Publicly accessible: /ads.txt (HTTP 200)
+[INFO    ] Publicly accessible: /app-ads.txt (HTTP 200)
+
+INFO
+------------------------------------------------------------
+Target        : http://127.0.0.1:8899/login
+Scan started  : 2026-11-06T15:20:30
+Host resolves : 127.0.0.1
+HTTP status  : 200
+Server banner: BaseHTTP Python/3.15.0
+Public file scan: 1 page(s)/file(s) checked, 0 secret pattern hit(s).
+Attack surface: 1 input(s) with parameters, 0 API endpoint(s) discovered
+HTTP OPTIONS -> 501
+DNS email-auth check skipped (target is an IP address)
+Suspicious script patterns found: 0
+robots.txt: 0 path(s) listed
+sitemap.xml: 0 path(s) listed
+sitemap_index.xml: 0 path(s) listed
+Device 127.0.0.1 responds to ping (alive)
+Login form found (POST http://127.0.0.1:8899/login) - testing factory default credentials
+      DEFAULT CREDS WORK: admin / admin
+Open ports on 127.0.0.1: 135(RPC), 445(SMB), 554(svc554)
+
+RECOMMENDATIONS
+------------------------------------------------------------
+- Remove or restrict access to any exposed sensitive files (.env, .git, backups).
+- Add missing security headers (CSP, HSTS, X-Frame-Options, etc.).
+- Set Secure + HttpOnly + SameSite on all cookies.
+- Disable server version disclosure (Server / X-Powered-By headers).
+- Upgrade to TLS 1.2+ and strong ciphers (>=128-bit).
+- If secrets were found in responses, rotate them immediately.
+- If SQL injection indicators were found: use parameterized queries / prepared statements for ALL database access, and verify with sqlmap.
+- Restrict database ports (3306/5432/27017/6379/9200...) via firewall/VPN.
+- Review discovered API endpoints for missing authentication/rate limiting.

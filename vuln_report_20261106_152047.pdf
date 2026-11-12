@@ -1,0 +1,370 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3891 >>
+stream
+BT
+/F2 16 Tf 50 780 Td 20 TL
+(Security Assessment Report) Tj
+T*
+/F1 10 Tf 14 TL
+(Target : http://127.0.0.1:8899/login) Tj
+T*
+/F1 10 Tf 14 TL
+(Date   : 2026-11-06T15:20:47) Tj
+T*
+/F2 11 Tf 15 TL
+(SECURITY VERDICT) Tj
+T*
+/F1 10 Tf 14 TL
+(VULNERABLE - CRITICAL issues found. Fix all CRITICAL findings immediately.) Tj
+T*
+/F1 10 Tf 14 TL
+(DATABASE: no external exposure detected. Internal credentials/config still need review.) Tj
+T*
+/F1 10 Tf 14 TL
+(Findings: CRITICAL=1, HIGH=2, MEDIUM=9, LOW=2, INFO=15) Tj
+T*
+/F1 8 Tf 12 TL
+() Tj
+T*
+/F2 12 Tf 16 TL
+(CATEGORY RISK SCORES  \(0 = secure, 100 = fully vulnerable\)) Tj
+T*
+/F1 10 Tf 14 TL
+( 1. SQL Injection \(and similar injection attacks\)) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 0/100) Tj
+T*
+/F1 10 Tf 14 TL
+( 2. Broken Authentication / Session Management Flaws) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 26/100) Tj
+T*
+/F1 9 Tf 13 TL
+(     Indicators: site on plain HTTP; login/admin panel reachable) Tj
+T*
+/F1 9 Tf 13 TL
+(     Fix: Enforce HTTPS everywhere, Secure+HttpOnly+SameSite cookies, strong session IDs, lockout/rate-limitin) Tj
+T*
+/F1 10 Tf 14 TL
+( 3. Sensitive Data Exposure / Misconfiguration) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 55/100) Tj
+T*
+/F1 9 Tf 13 TL
+(     Indicators: sensitive file publicly accessible; technology/version disclosure) Tj
+T*
+/F1 9 Tf 13 TL
+(     Fix: Remove publicly exposed files, rotate any leaked secrets, disable server version disclosure, encrypt) Tj
+T*
+/F1 10 Tf 14 TL
+( 4. Cross-Site Scripting \(XSS\) and related client-side attacks) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 38/100) Tj
+T*
+/F1 9 Tf 13 TL
+(     Indicators: CSP missing; clickjacking protection missing; MIME-sniffing possible; referrer policy missing) Tj
+T*
+/F1 9 Tf 13 TL
+(     Fix: Add CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy; encode all output; use modern fra) Tj
+T*
+/F1 10 Tf 14 TL
+( 5. IDOR / Broken Access Control) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 40/100) Tj
+T*
+/F1 9 Tf 13 TL
+(     Indicators: DB admin panel exposed) Tj
+T*
+/F1 9 Tf 13 TL
+(     Fix: Enforce authorization server-side on EVERY object/request; restrict CORS; disable directory listing.) Tj
+T*
+/F1 10 Tf 14 TL
+( 6. API and Backend Vulnerabilities) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 0/100) Tj
+T*
+/F1 10 Tf 14 TL
+( 7. Man-in-the-Middle \(MitM\) / Network Interception) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 35/100) Tj
+T*
+/F1 9 Tf 13 TL
+(     Indicators: HSTS missing; no HTTPS enforcement) Tj
+T*
+/F1 9 Tf 13 TL
+(     Fix: Force HTTPS with HSTS, TLS 1.2+, valid certificate, no mixed content.) Tj
+T*
+/F1 10 Tf 14 TL
+( 8. Supply-Chain / Third-Party Component Attacks) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 0/100) Tj
+T*
+/F1 10 Tf 14 TL
+( 9. Social Engineering / Phishing) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 0/100) Tj
+T*
+/F1 10 Tf 14 TL
+(10. Malware, Ransomware, or Insider Threats) Tj
+T*
+/F2 11 Tf 15 TL
+(     Score: 0/100) Tj
+T*
+/F1 8 Tf 12 TL
+() Tj
+T*
+/F2 12 Tf 16 TL
+(TEST RESULTS  \(0 = secure / no issues, 100 = vulnerable\)) Tj
+T*
+/F1 9 Tf 13 TL
+(HTTP headers & cookies                            77/100  \(7 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(TLS version & cipher                               0/100  \(0 finding\(s\)\) [skipped]) Tj
+T*
+/F1 9 Tf 13 TL
+(TLS certificate validity                           0/100  \(0 finding\(s\)\) [skipped]) Tj
+T*
+/F1 9 Tf 13 TL
+(Sensitive file exposure \(90+ paths\)               60/100  \(17 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Public file & secret scan                          0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(SQL injection probes \(error/boolean/UNION\)         0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(XSS / SSTI / open-redirect probes                  0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(CORS configuration                                 0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(HTTP methods \(OPTIONS\)                             0/100  \(0 finding\(s\)\)) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4611 >>
+stream
+BT
+/F1 9 Tf 50 780 Td 13 TL
+(Directory listing check                            0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Legacy TLS 1.0/1.1 check                           0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(GraphQL introspection                              0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(API authentication probe                           0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Dangling deploy / subdomain takeover               0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Content analysis \(mixed/comments/forms/JS libs\)   17/100  \(2 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Phishing surface \(SPF/DMARC/external forms\)        0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Suspicious script scan \(miners/obfuscation\)        0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(IDOR probe \(numeric object IDs\)                    0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(robots.txt & sitemap review                        0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Software fingerprinting                            0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Device ping check                                  0/100  \(0 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Default credential check \(device login\)           50/100  \(1 finding\(s\)\)) Tj
+T*
+/F1 9 Tf 13 TL
+(Port scan \(1089 ports - device mode\)              12/100  \(1 finding\(s\)\)) Tj
+T*
+/F2 10 Tf 14 TL
+(OVERALL - worst test score: 77/100) Tj
+T*
+/F1 8 Tf 12 TL
+() Tj
+T*
+/F2 12 Tf 16 TL
+(FINDINGS) Tj
+T*
+/F1 9 Tf 13 TL
+([CRITICAL] WEAK PASSWORD - device login accepts DEFAULT credentials 'admin':*** - Factory default password sti) Tj
+T*
+/F1 9 Tf 13 TL
+([HIGH] Publicly accessible: /phpmyadmin/ \(HTTP 200\) - SENSITIVE FILE EXPOSED!) Tj
+T*
+/F1 9 Tf 13 TL
+([HIGH] Publicly accessible: /pma/ \(HTTP 200\) - SENSITIVE FILE EXPOSED!) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'strict-transport-security' - HSTS - forces HTTPS, prevents downgrade attacks) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'content-security-policy' - CSP - mitigates XSS) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'x-frame-options' - Clickjacking protection) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'x-content-type-options' - Prevents MIME-sniffing) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'referrer-policy' - Controls referrer leakage) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Missing security header 'permissions-policy' - Restricts browser features) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] POST form has no visible CSRF token field - If no token is added by JS, the form may be CSRF-able.) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] SMB \(445\) exposed - Ensure SMB is not reachable from untrusted networks.) Tj
+T*
+/F1 9 Tf 13 TL
+([MEDIUM] Site available over plain HTTP without forced HTTPS redirect.) Tj
+T*
+/F1 9 Tf 13 TL
+([LOW] Server version disclosed via header: BaseHTTP Python/3.15.0 \(helps attackers fingerprint the stack\).) Tj
+T*
+/F1 9 Tf 13 TL
+([LOW] 1 password field\(s\) missing autocomplete attribute - Use autocomplete='current-password'/'new-password' ) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /test/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /backups/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /backup/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /old/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /admin/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /administrator/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /wp-admin/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /debug/ \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /sitemap.xml \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /.well-known/security.txt \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /humans.txt \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /robots.txt \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /sitemap_index.xml \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /ads.txt \(HTTP 200\)) Tj
+T*
+/F1 9 Tf 13 TL
+([INFO] Publicly accessible: /app-ads.txt \(HTTP 200\)) Tj
+T*
+/F1 8 Tf 12 TL
+() Tj
+T*
+/F2 12 Tf 16 TL
+(TOP FIXES \(by risk score\)) Tj
+T*
+/F1 9 Tf 13 TL
+(- [55/100] Sensitive Data Exposure / Misconfiguration: Remove publicly exposed files, rotate any leaked secret) Tj
+T*
+/F1 9 Tf 13 TL
+(- [40/100] IDOR / Broken Access Control: Enforce authorization server-side on EVERY object/request; restrict C) Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 421 >>
+stream
+BT
+/F1 9 Tf 50 780 Td 13 TL
+(- [38/100] Cross-Site Scripting \(XSS\) and related client-side attacks: Add CSP, X-Frame-Options, X-Content-Typ) Tj
+T*
+/F1 9 Tf 13 TL
+(- [35/100] Man-in-the-Middle \(MitM\) / Network Interception: Force HTTPS with HSTS, TLS 1.2+, valid certificate) Tj
+T*
+/F1 9 Tf 13 TL
+(- [26/100] Broken Authentication / Session Management Flaws: Enforce HTTPS everywhere, Secure+HttpOnly+SameSit) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000272 00000 n 
+0000000408 00000 n 
+0000004351 00000 n 
+0000004487 00000 n 
+0000009150 00000 n 
+0000009287 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+9760
+%%EOF

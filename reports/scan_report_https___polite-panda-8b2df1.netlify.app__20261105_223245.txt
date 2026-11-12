@@ -1,0 +1,225 @@
+AUTHORIZED SECURITY EXPOSURE SCAN REPORT
+============================================================
+Target:     https://polite-panda-8b2df1.netlify.app/
+Date (UTC): 2026-11-05T20:32:45.647608+00:00Z
+Tool:       secure_scan.py v1.0 (read-only)
+Findings:   MEDIUM=26, INFO=3, LOW=2, HIGH=25
+
+NOTE: This report lists publicly observable information only. No
+exploitation, brute force, or modification was performed.
+
+[HIGH] (Exposed Files) Publicly accessible: /.env
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /.env.backup
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /.env.local
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /.env.production
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /.git/HEAD
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /.git/config
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /.htpasswd
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /actuator/heapdump
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /backup.sql
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /backup.tar.gz
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /backup.zip
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /config.json
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /config.php
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /config.yaml
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /config.yml
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /database.sql
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /db.sql
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /dump.sql
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /phpinfo.php
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /server-status
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /web.config
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[HIGH] (Exposed Files) Publicly accessible: /wp-config.bak
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /wp-config.php.bak
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /wp-config.php.swp
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[HIGH] (Exposed Files) Publicly accessible: /wp-config.php~
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /.hg/hgrc
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /.htaccess
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /.svn/entries
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /.well-known/security.txt
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /actuator
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /actuator/env
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /actuator/health
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /adminer.php
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /api-docs
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /api/swagger.json
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /crossdomain.xml
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /info.php
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /openapi.json
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /package-lock.json
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /package.json
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /robots.txt
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /server-info
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /settings.py
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /sitemap.xml
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /swagger.json
+    HTTP 200, 1445 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8">   <meta content="IE=Edge" http-equiv="X-UA-Compatible">   <meta name="viewport" content="width=device-width, initial-s...
+
+[MEDIUM] (Exposed Files) Publicly accessible: /yarn.lock
+    HTTP 200, 1980 bytes returned. Review whether this should be public.
+    Evidence: <!DOCTYPE html> <html> <head>   <base href="/">   <meta charset="UTF-8"> <!-- This site is hosted on Netlify. Anyone can build and deploy a site      like this one for free: https://netlify.new...
+
+[MEDIUM] (Headers) Missing header: content-security-policy
+    CSP missing - increases XSS impact
+
+[MEDIUM] (Headers) Missing header: x-frame-options
+    Clickjacking protection missing (use X-Frame-Options or CSP frame-ancestors)
+
+[MEDIUM] (Headers) Missing header: x-content-type-options
+    X-Content-Type-Options missing - MIME sniffing possible
+
+[MEDIUM] (Headers) Missing header: referrer-policy
+    Referrer-Policy missing - URLs may leak to third parties
+
+[MEDIUM] (Headers) Missing header: permissions-policy
+    Permissions-Policy missing - camera/mic/geolocation not restricted
+
+[LOW] (Network) SMTP banner on port 25
+    220 protect.herotel.com ESMTP Server Ready
+500 unrecognized command
+    Evidence: 220 protect.herotel.com ESMTP Server Ready 500 unrecognized command
+
+[LOW] (TLS) TLS check skipped
+    can't subtract offset-naive and offset-aware datetimes
+
+[INFO] (HTTPS) HTTP redirects to HTTPS
+    http://polite-panda-8b2df1.netlify.app/ -> https://polite-panda-8b2df1.netlify.app/
+
+[INFO] (Headers) Server header disclosed: Netlify
+    Version info can help attackers target known vulnerabilities.
+
+[INFO] (Network) 1 common ports open on polite-panda-8b2df1.netlify.app
+    25

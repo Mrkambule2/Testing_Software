@@ -1,0 +1,57 @@
+VulnCheck Lite - Defensive Security Audit Report
+============================================================
+Target : http://127.0.0.1:8899/
+Date   : 2026-11-05T22:28:12
+Mode   : Read-only audit (GET/HEAD/OPTIONS + TCP connect + non-destructive SQLi indicator probes)
+
+SECURITY VERDICT
+------------------------------------------------------------
+AT RISK - HIGH severity issues found. Address HIGH findings before launch.
+DATABASE: no external exposure detected. Internal credentials/config still need review.
+Findings: HIGH=1, MEDIUM=11, LOW=3
+
+FINDINGS
+------------------------------------------------------------
+[HIGH    ] Form(s) submit data to EXTERNAL domain(s): evil.example.com - User credentials/data may be sent to a third party - verify this is intentional.
+[MEDIUM  ] Missing security header 'strict-transport-security' - HSTS - forces HTTPS, prevents downgrade attacks
+[MEDIUM  ] Missing security header 'content-security-policy' - CSP - mitigates XSS
+[MEDIUM  ] Missing security header 'x-frame-options' - Clickjacking protection
+[MEDIUM  ] Missing security header 'x-content-type-options' - Prevents MIME-sniffing
+[MEDIUM  ] Missing security header 'referrer-policy' - Controls referrer leakage
+[MEDIUM  ] Missing security header 'permissions-policy' - Restricts browser features
+[MEDIUM  ] POST form has no visible CSRF token field - If no token is added by JS, the form may be CSRF-able.
+[MEDIUM  ] No SPF record found for 127.0.0.1:8899 - Anyone can send email appearing to come from this domain - phishing risk.
+[MEDIUM  ] No DMARC record for 127.0.0.1:8899 - No policy telling receivers to reject spoofed mail - phishing risk.
+[MEDIUM  ] SMB (445) exposed - Ensure SMB is not reachable from untrusted networks.
+[MEDIUM  ] Site available over plain HTTP without forced HTTPS redirect.
+[LOW     ] Server version disclosed via header: BaseHTTP Python/3.15.0 (helps attackers fingerprint the stack).
+[LOW     ] 1 password field(s) missing autocomplete attribute - Use autocomplete='current-password'/'new-password' appropriately.
+[LOW     ] 2 potential DOM-XSS sink(s) in public JS/HTML (innerHTML/eval/document.write/location) - Review whether user input reaches these sinks unencoded.
+
+INFO
+------------------------------------------------------------
+Target        : http://127.0.0.1:8899/
+Scan started  : 2026-11-05T22:28:08
+Host resolves : 127.0.0.1
+HTTP status  : 200
+Server banner: BaseHTTP Python/3.15.0
+Public file scan: 1 page(s)/file(s) checked, 0 secret pattern hit(s).
+Attack surface: 0 input(s) with parameters, 0 API endpoint(s) discovered
+HTTP OPTIONS -> 501
+Suspicious script patterns found: 0
+robots.txt: 0 path(s) listed
+sitemap.xml: 0 path(s) listed
+sitemap_index.xml: 0 path(s) listed
+Open ports on 127.0.0.1: 445(SMB)
+
+RECOMMENDATIONS
+------------------------------------------------------------
+- Remove or restrict access to any exposed sensitive files (.env, .git, backups).
+- Add missing security headers (CSP, HSTS, X-Frame-Options, etc.).
+- Set Secure + HttpOnly + SameSite on all cookies.
+- Disable server version disclosure (Server / X-Powered-By headers).
+- Upgrade to TLS 1.2+ and strong ciphers (>=128-bit).
+- If secrets were found in responses, rotate them immediately.
+- If SQL injection indicators were found: use parameterized queries / prepared statements for ALL database access, and verify with sqlmap.
+- Restrict database ports (3306/5432/27017/6379/9200...) via firewall/VPN.
+- Review discovered API endpoints for missing authentication/rate limiting.

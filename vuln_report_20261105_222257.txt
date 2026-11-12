@@ -1,0 +1,50 @@
+VulnCheck Lite - Defensive Security Audit Report
+============================================================
+Target : http://127.0.0.1:8899/
+Date   : 2026-11-05T22:22:57
+Mode   : Read-only audit (GET/HEAD/OPTIONS + TCP connect + non-destructive SQLi indicator probes)
+
+SECURITY VERDICT
+------------------------------------------------------------
+POTENTIALLY VULNERABLE - MEDIUM findings present. Manually verify injection indicators (e.g. with sqlmap).
+DATABASE: no external exposure detected. Internal credentials/config still need review.
+Findings: MEDIUM=8, LOW=1
+
+FINDINGS
+------------------------------------------------------------
+[MEDIUM  ] Missing security header 'strict-transport-security' - HSTS - forces HTTPS, prevents downgrade attacks
+[MEDIUM  ] Missing security header 'content-security-policy' - CSP - mitigates XSS
+[MEDIUM  ] Missing security header 'x-frame-options' - Clickjacking protection
+[MEDIUM  ] Missing security header 'x-content-type-options' - Prevents MIME-sniffing
+[MEDIUM  ] Missing security header 'referrer-policy' - Controls referrer leakage
+[MEDIUM  ] Missing security header 'permissions-policy' - Restricts browser features
+[MEDIUM  ] SMB (445) exposed - Ensure SMB is not reachable from untrusted networks.
+[MEDIUM  ] Site available over plain HTTP without forced HTTPS redirect.
+[LOW     ] Server version disclosed via header: BaseHTTP Python/3.15.0 (helps attackers fingerprint the stack).
+
+INFO
+------------------------------------------------------------
+Target        : http://127.0.0.1:8899/
+Scan started  : 2026-11-05T22:22:53
+Host resolves : 127.0.0.1
+HTTP status  : 200
+Server banner: BaseHTTP Python/3.15.0
+Public file scan: 1 page(s)/file(s) checked, 0 secret pattern hit(s).
+Attack surface: 0 input(s) with parameters, 0 API endpoint(s) discovered
+HTTP OPTIONS -> 501
+robots.txt: 0 path(s) listed
+sitemap.xml: 0 path(s) listed
+sitemap_index.xml: 0 path(s) listed
+Open ports on 127.0.0.1: 445(SMB)
+
+RECOMMENDATIONS
+------------------------------------------------------------
+- Remove or restrict access to any exposed sensitive files (.env, .git, backups).
+- Add missing security headers (CSP, HSTS, X-Frame-Options, etc.).
+- Set Secure + HttpOnly + SameSite on all cookies.
+- Disable server version disclosure (Server / X-Powered-By headers).
+- Upgrade to TLS 1.2+ and strong ciphers (>=128-bit).
+- If secrets were found in responses, rotate them immediately.
+- If SQL injection indicators were found: use parameterized queries / prepared statements for ALL database access, and verify with sqlmap.
+- Restrict database ports (3306/5432/27017/6379/9200...) via firewall/VPN.
+- Review discovered API endpoints for missing authentication/rate limiting.
